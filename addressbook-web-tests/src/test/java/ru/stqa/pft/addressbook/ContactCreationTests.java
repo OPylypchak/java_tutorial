@@ -32,7 +32,7 @@ public class ContactCreationTests {
     }
 
     @Test
-    public void ContactCreationTests() {
+    public void testContactCreation() {
 
         gotoContactPage();
         fillContactForm(new ContactData("Olga", "Pylypchak", "ondine", "+380961234566", "olga.pylypchak@mail.ru", "Google"));
