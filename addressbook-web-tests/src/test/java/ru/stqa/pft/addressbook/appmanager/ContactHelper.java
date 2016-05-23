@@ -56,7 +56,9 @@ public class ContactHelper extends HelperBase{
     }
 
     public void initContactModification() {
-        click(By.xpath("//tr[@class='odd']/td[8]/a/img"));
+        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+        //table[@id='maintable']/tbody/tr[2]/td[8]/a/img
+        //tr[@class='odd']/td[8]/a/img
     }
 
     public void submitContactModification() {
@@ -65,6 +67,17 @@ public class ContactHelper extends HelperBase{
 
     public void submitContactDeletion() {
         wd.switchTo().alert().accept();
+    }
+
+    public void createContact(ContactData contact, boolean create) {
+
+        fillContactForm(contact, create);
+        submitContactCreation();
+        gotoHomePage();
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
     }
 
 
